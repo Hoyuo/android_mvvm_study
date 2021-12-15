@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/bind"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="me.hoyuo.gallery.presentation.feature.detail.DetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            bind:imgSrc="@{vm.data.downloadUrl}"
+            tools:background="@android:color/darker_gray" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/id_label"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@{vm.data.id}"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/id_label"
+            app:layout_constraintTop_toTopOf="@+id/id_label" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/id_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="id, id_label" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/author_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/author_label"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/id_barrier" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@{vm.data.author}"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/author_label"
+            app:layout_constraintTop_toTopOf="@+id/author_label" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/author_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="author, author_label" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/size_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/size_label"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/author_barrier" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/size"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@{@string/size(vm.data.width, vm.data.height)}"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/size_label"
+            app:layout_constraintTop_toTopOf="@+id/size_label" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/size_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="size, size_label" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/url_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/url_label"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/size_barrier" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/url"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@{vm.data.url}"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/url_label"
+            app:layout_constraintTop_toTopOf="@+id/url_label"
+            tools:text="https://picsum.photos/id/12/2500/1667https://picsum.photos/id/12/2500/1667" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/url_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="url, url_label" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/download_url_label"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/text_view_height"
+            android:layout_marginTop="10dp"
+            android:text="@string/download_url_label"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/url_barrier" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/download_url"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@{vm.data.downloadUrl}"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/download_url_label"
+            app:layout_constraintTop_toTopOf="@+id/download_url_label"
+            tools:text="https://picsum.photos/id/12/2500/1667" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

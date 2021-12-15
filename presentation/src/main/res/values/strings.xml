@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="id_label">ID :</string>
+    <string name="author_label">Author :</string>
+    <string name="size_label">Size :</string>
+    <string name="url_label">Url :</string>
+    <string name="download_url_label">Download URL :</string>
+</resources>
