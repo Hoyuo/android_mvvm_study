@@ -14,7 +14,7 @@ fun RecyclerView.setList(list: List<ImageListData>?) {
 }
 
 @BindingAdapter("bind:addList")
-fun RecyclerView.updateList(addList: List<ImageListData>?) {
+fun RecyclerView.addList(addList: List<ImageListData>?) {
     (adapter as? MainAdapter)?.updateList(addList ?: emptyList())
 }
 
