@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 import me.hoyuo.gallery.base.presentation.mapper.PresentationModelMapper
 import me.hoyuo.gallery.base.presentation.model.PresentationModel
-import me.hoyuo.gallery.domain.entity.ImageEntity
+import me.hoyuo.gallery.domain.model.ImageEntity
 
 @Parcelize
 class ImageData(

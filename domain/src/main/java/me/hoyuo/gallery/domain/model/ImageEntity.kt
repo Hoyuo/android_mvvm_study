@@ -1,10 +1,7 @@
-package me.hoyuo.gallery.domain.entity
+package me.hoyuo.gallery.domain.model
 
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
 import me.hoyuo.gallery.base.domain.model.Entity
 
-@Parcelize
 data class ImageEntity(
     val id: String,
     val author: String,
@@ -12,4 +9,4 @@ data class ImageEntity(
     val height: Int,
     val url: String,
     val downloadUrl: String,
-) : Parcelable, Entity
+) : Entity

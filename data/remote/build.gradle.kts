@@ -44,7 +44,6 @@ dependencies {
     implementation(Dependency.Hilt.hilt)
     kapt(Dependency.Hilt.compiler)
 
-    implementation(Dependency.Rx.android)
     implementation(Dependency.Rx.java)
     implementation(Dependency.Rx.kotlin)
 

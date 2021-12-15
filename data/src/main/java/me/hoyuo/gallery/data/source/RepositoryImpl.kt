@@ -2,7 +2,7 @@ package me.hoyuo.gallery.data.source
 
 import io.reactivex.rxjava3.core.Single
 import me.hoyuo.gallery.data.model.ImageDataModel
-import me.hoyuo.gallery.domain.entity.ImageEntity
+import me.hoyuo.gallery.domain.model.ImageEntity
 import me.hoyuo.gallery.domain.repository.Repository
 
 class RepositoryImpl(

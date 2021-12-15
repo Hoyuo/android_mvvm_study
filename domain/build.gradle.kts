@@ -2,7 +2,6 @@ plugins {
     id("com.android.library")
     kotlin("android")
     kotlin("kapt")
-    id("kotlin-parcelize")
     id("dagger.hilt.android.plugin")
 }
 
@@ -37,14 +36,10 @@ dependencies {
     implementation(project(":base"))
 
     implementation(Dependency.Kotlin.stdlib)
-    implementation(Dependency.Kotlin.serialization)
 
     implementation(Dependency.Hilt.hilt)
     kapt(Dependency.Hilt.compiler)
 
-    implementation(Dependency.Rx.android)
     implementation(Dependency.Rx.java)
     implementation(Dependency.Rx.kotlin)
-
-    implementation(Dependency.timber)
 }

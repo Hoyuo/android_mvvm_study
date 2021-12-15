@@ -55,23 +55,13 @@ dependencies {
     implementation(Dependency.AndroidX.constraintlayout)
     implementation(Dependency.AndroidX.activity)
     implementation(Dependency.AndroidX.fragment)
-    implementation(Dependency.AndroidX.viewpager2)
     implementation(Dependency.AndroidX.java8)
     implementation(Dependency.AndroidX.lifecycle)
     implementation(Dependency.AndroidX.liveData)
     implementation(Dependency.AndroidX.viewModel)
-    implementation(Dependency.AndroidX.process)
 
     implementation(Dependency.Hilt.hilt)
-
     kapt(Dependency.Hilt.compiler)
-
-    implementation(Dependency.OkHttp3.okhttp)
-    implementation(Dependency.OkHttp3.logging)
-
-    implementation(Dependency.Retrofit2.retrofit)
-    implementation(Dependency.Retrofit2.rxjava)
-    implementation(Dependency.Retrofit2.json)
 
     implementation(Dependency.Glide.glide)
     kapt(Dependency.Glide.annotation)
