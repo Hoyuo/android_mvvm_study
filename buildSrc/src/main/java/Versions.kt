@@ -9,7 +9,7 @@ object Versions {
     const val versionName = "${majorVersion}.${minorVersion}.${patchVersion}"
 
     // gradle plugin
-    const val buildGradle = "7.0.3"
+    const val buildGradle = "7.0.4"
 
     // kotlin
     const val kotlin = "1.5.31"

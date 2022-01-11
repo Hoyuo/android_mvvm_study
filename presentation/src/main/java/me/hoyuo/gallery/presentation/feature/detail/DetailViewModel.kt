@@ -1,27 +1,25 @@
 package me.hoyuo.gallery.presentation.feature.detail
 
-import android.os.Bundle
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import dagger.assisted.Assisted
-import dagger.assisted.AssistedFactory
-import dagger.assisted.AssistedInject
+import androidx.lifecycle.SavedStateHandle
+import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.kotlin.subscribeBy
+import javax.inject.Inject
 import me.hoyuo.gallery.base.presentation.BaseViewModel
 import me.hoyuo.gallery.base.presentation.util.ioToMain
 import me.hoyuo.gallery.domain.usecase.GetImageDetailsUseCase
 import me.hoyuo.gallery.presentation.helper.DetailActivityHelper
 import me.hoyuo.gallery.presentation.model.ImageData
 
-class DetailViewModel @AssistedInject constructor(
+@HiltViewModel
+class DetailViewModel @Inject constructor(
     imageDetailsUseCase: GetImageDetailsUseCase,
-    @Assisted private val bundle: Bundle,
+    savedStateHandle: SavedStateHandle,
 ) : BaseViewModel() {
 
     private val imageId: String by lazy {
-        DetailActivityHelper.getImageId(bundle)
+        DetailActivityHelper.getImageId(savedStateHandle)
     }
 
     private val _data = MutableLiveData<ImageData>()
@@ -36,22 +34,5 @@ class DetailViewModel @AssistedInject constructor(
                 _data.value = it
             }
             .addToDisposable()
-    }
-
-    @dagger.assisted.AssistedFactory
-    interface AssistedFactory {
-        fun create(bundle: Bundle?): DetailViewModel
-    }
-
-    companion object {
-        fun provideFactory(
-            assistedFactory: AssistedFactory,
-            bundle: Bundle?,
-        ): ViewModelProvider.Factory = object : ViewModelProvider.Factory {
-            @Suppress("UNCHECKED_CAST")
-            override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                return assistedFactory.create(bundle) as T
-            }
-        }
     }
 }
